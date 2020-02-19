@@ -1,5 +1,8 @@
 package com.rkb.user;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,8 +19,8 @@ public class User {
 	private int id;
 	private String name;
 	
-	@OneToMany
-	private Car car;
+	@OneToMany(mappedBy = "user")
+	private Set<Car> cars = new HashSet<>();
 	
 	public int getId() {
 		return id;
