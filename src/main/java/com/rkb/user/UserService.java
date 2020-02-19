@@ -30,8 +30,8 @@ public class UserService {
 		 userDao.deleteById(id);
 	}
 	
-	public void upsert(User u) {
-		userDao.save(u);
+	public User upsert(User u) {
+		return userDao.save(u);
 	}
 
 }
